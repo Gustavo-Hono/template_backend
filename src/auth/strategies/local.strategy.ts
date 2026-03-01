@@ -11,12 +11,12 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  private readonly logger = new Logger(LocalStrategy.name)
+  private readonly logger = new Logger(LocalStrategy.name);
 
   async validate(email: string, password: string) {
     const user = await this.authService.validateUser({ email, password });
     if (!user) throw new UnauthorizedException('Not authorized');
-    this.logger.log("User validated successfully inside LocalStrategy")
+    this.logger.log('User validated successfully inside LocalStrategy');
     return user;
   }
 }

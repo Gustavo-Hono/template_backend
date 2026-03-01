@@ -7,4 +7,4 @@ async function bootstrap() {
   app.set('trust proxy', 'loopback');
   await app.listen(process.env.PORT ?? 3001);
 }
-bootstrap();
+void bootstrap();

@@ -11,7 +11,7 @@ describe('AuthService', () => {
       providers: [
         AuthService,
         { provide: JwtService, useValue: {} },
-        { provide: PrismaService, useValue: {} }
+        { provide: PrismaService, useValue: {} },
       ],
     }).compile();
 
