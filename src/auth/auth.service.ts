@@ -21,7 +21,7 @@ export class AuthService {
       throw new HttpException('User not found', 401);
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password!);
+    const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
       throw new HttpException('Credenciais inválidas', 401);
