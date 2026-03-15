@@ -27,8 +27,8 @@ export class AuthController {
   }
 
   @Post('register')
-  // @UseGuards(LocalGuards)
-  register(@Body() createAuthDto: AuthPayloadDto) {
+
+  register(@Body() createAuthDto: AuthPayloadDto): Promise<{ message: string; }> {
     return this.authService.createUser(createAuthDto);
   }
 
